@@ -22,8 +22,14 @@ public class WeatherSummary {
         Scanner scanner = new Scanner(System.in);
         double max = Double.NEGATIVE_INFINITY;
         double min = Double.POSITIVE_INFINITY;
+        double sum = 0;
+        int count = 0;
+
         while (scanner.hasNextDouble()) {   
             double temp = scanner.nextDouble();
+            sum += temp;
+            count++;
+
             if (temp > max){
                 max = temp;
             }
@@ -33,5 +39,7 @@ public class WeatherSummary {
         }
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
+        System.out.println("Average: " + sum/count);
+        
     }
 }
