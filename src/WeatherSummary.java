@@ -19,12 +19,19 @@ public class WeatherSummary {
      * @param args command line arguments (ignored)
      */
     public static void main(String[] args) {
-        // Implement this method!
-        // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
         Scanner scanner = new Scanner(System.in);
+        double max = Double.NEGATIVE_INFINITY;
+        double min = Double.POSITIVE_INFINITY;
         while (scanner.hasNextDouble()) {   
             double temp = scanner.nextDouble();
-            System.out.println(temp);
-    }
+            if (temp > max){
+                max = temp;
+            }
+            if( temp < min){
+                min = temp;
+            }
+        }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
     }
 }
