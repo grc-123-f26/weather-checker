@@ -22,10 +22,24 @@ public class WeatherSummary {
 
         Scanner input = new Scanner(System.in);
 
+        double max = input.nextDouble();
+        double min = max;
+
         while (input.hasNextDouble()) {
             double temperature = input.nextDouble();
-            System.out.println(temperature);
+            
+            if (temperature > max) {
+                max = temperature;
+            }
+            if (temperature < min) {
+                min = temperature;
+            }
         }
+
+        // looked at the link below to remember how to round outputs
+        // https://www.geeksforgeeks.org/java/java-program-to-round-a-number-to-n-decimal-places/
+        System.out.println("Max: " + String.format("%.2f", max));
+        System.out.println("Min: " + String.format("%.2f", min));
 
         input.close();
     }
