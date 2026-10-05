@@ -23,11 +23,15 @@ public class WeatherSummary {
         double temp; //current temp
         double minTemp; //min
         double maxTemp; //max
+
         //scan temps
         Scanner scan = new Scanner(System.in);
         //assign first temp to both min and max
         minTemp = scan.nextDouble();
         maxTemp = minTemp;
+        double totalTemp =minTemp; //continuous sum of temps
+        int count=1; //counts num of temps
+
         //while there is another temp, check if bigger or smaller but not equal to current temp
         while(scan.hasNextDouble()) {
             temp = scan.nextDouble();
@@ -37,8 +41,12 @@ public class WeatherSummary {
             if (temp > maxTemp) {
                 maxTemp = temp;
             }
+            totalTemp += temp;
+            count++;
         } scan.close();
-        System.out.printf("Max: %.2f\nMin: %.2f", maxTemp, minTemp);
+        System.out.printf("Max: %.2f\nMin: %.2f\n", maxTemp, minTemp);
+        double avg = totalTemp/count;
+        System.out.println("Average: " + avg); 
 
     }//end main
 
