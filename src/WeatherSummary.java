@@ -27,11 +27,11 @@ public class WeatherSummary {
                 NumberD = ScannerD.nextDouble();
                 if(NumberD > Max)
                 {
-                    NumberD = Max;
+                    Max = NumberD;
                 }else if(NumberD < Min || Min == 0)
                 { 
-                    
-                    NumberD = Min;
+
+                    Min = NumberD;
                 }
             }
         System.out.println("Max: " + Max);
