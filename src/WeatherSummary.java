@@ -20,13 +20,26 @@ public class WeatherSummary {
     public static void main(String[] args) {
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
-        double temp;
+        double temp; //current temp
+        double minTemp; //min
+        double maxTemp; //max
+        //scan temps
         Scanner scan = new Scanner(System.in);
+        //assign first temp to both min and max
+        minTemp = scan.nextDouble();
+        maxTemp = minTemp;
+        //while there is another temp, check if bigger or smaller but not equal to current temp
         while(scan.hasNextDouble()) {
             temp = scan.nextDouble();
-            System.out.println(temp);
-    } scan.close();
+            if (temp < minTemp) {
+                minTemp = temp;
+            }
+            if (temp > maxTemp) {
+                maxTemp = temp;
+            }
+        } scan.close();
+        System.out.printf("Max: %.2f\nMin: %.2f", maxTemp, minTemp);
 
     }//end main
-    
+
 }//end class
