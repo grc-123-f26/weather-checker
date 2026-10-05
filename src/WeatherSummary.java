@@ -19,10 +19,26 @@ public class WeatherSummary {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
+        double min = 99999;
+        double max = -99999;
+
         while (scan.hasNextDouble()) {
             double temp = scan.nextDouble();
-            System.out.println(temp);
+
+            if (temp > max) {
+                max = temp;
+            }
+
+            if (temp < min) {
+                min = temp;
+            }
+
+            
         }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+
         scan.close();
         
     }
