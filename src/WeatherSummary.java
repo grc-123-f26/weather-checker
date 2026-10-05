@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class WeatherSummary {
     /**
      * Reads newline-delimted temperatures from System.in and prints summary
@@ -18,5 +20,13 @@ public class WeatherSummary {
     public static void main(String[] args) {
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
-    }
-}
+        double temp;
+        Scanner scan = new Scanner(System.in);
+        while(scan.hasNextDouble()) {
+            temp = scan.nextDouble();
+            System.out.println(temp);
+    } scan.close();
+
+    }//end main
+    
+}//end class
