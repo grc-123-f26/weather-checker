@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class WeatherSummary {
     /**
      * Reads newline-delimted temperatures from System.in and prints summary
@@ -16,7 +17,24 @@ public class WeatherSummary {
      * @param args command line arguments (ignored)
      */
     public static void main(String[] args) {
-        // Implement this method!
-        // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
+                Scanner scanner = new Scanner(System.in);
+        double sum = 0;
+        int count = 0;
+        double max = Double.NEGATIVE_INFINITY;
+        double min = Double.POSITIVE_INFINITY;
+        while (scanner.hasNextDouble()) {
+            double temp = scanner.nextDouble();
+            sum += temp;
+            count++;
+            if (temp > max) max = temp;
+            if (temp < min) min = temp;
+        }
+        if (count == 0) {
+            System.out.println("No temperatures added");
+            return;
+        }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+        System.out.println("Average: " + (sum / count));
     }
 }
