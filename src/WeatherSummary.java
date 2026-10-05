@@ -43,6 +43,7 @@ public class WeatherSummary {
         System.out.println("Max: " + Max);
         System.out.println("Min: " + Min);
         System.out.println("Average: " + Total/NumberOfV);
+        
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
     }
