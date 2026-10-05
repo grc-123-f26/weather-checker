@@ -89,12 +89,29 @@ public class WeatherFetcher {
             // Split the comma-separated string of values into individual strings
             String[] temps = matcher.group(1).split(",");
 
-            for (String temp : temps) {
+           double first = Double.parseDouble(temps[0].trim()) * 9/5 + 32;
+            double max = 0;
+            double min = 0;
+            double sum = first;
+
+            for (int i = 1; i < temps.length; i++) {
                 // Parse each temperature string to a double and convert to Fahrenheit
-                double celsius = Double.parseDouble(temp.trim());
-                double fahrenheit = celsius * 9 / 5 + 32;
-                System.out.println(fahrenheit); // Print the result with no extra formatting
+                double fahrenheit = Double.parseDouble(temps[i].trim()) * 9/5 + 32;
+                if (fahrenheit > max) {
+                    max = fahrenheit;
+                }
+                if (fahrenheit < min) {
+                    min = fahrenheit;
+                } 
+                sum += fahrenheit;
+                // System.out.println(fahrenheit); // Print the result with no extra formatting
             }
+            
+            double average = sum / temps.length;
+
+            System.out.printf("Max: %.2f%n", max);
+            System.out.printf("Min: %.2f%n", min);
+            System.out.printf("Average: %.2f%n", average);
         }
     }
 
