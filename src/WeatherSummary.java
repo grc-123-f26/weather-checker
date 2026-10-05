@@ -24,12 +24,17 @@ public class WeatherSummary {
         while(ScannerD.hasNextDouble())
             {
                 double NumberD; 
-
                 NumberD = ScannerD.nextDouble();
-
-                System.out.println(NumberD);
-
+                if(NumberD > Max)
+                {
+                    NumberD = Max;
+                }else if(Number < Min)
+                {
+                    NumberD = Min;
+                }
             }
+        System.out.println("Max: " + Max);
+        System.out.println("Min: " + Min);
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
     }
