@@ -25,6 +25,9 @@ public class WeatherSummary {
         double max = input.nextDouble();
         double min = max;
 
+        double sum = max;
+        int count = 1;
+
         while (input.hasNextDouble()) {
             double temperature = input.nextDouble();
             
@@ -34,12 +37,18 @@ public class WeatherSummary {
             if (temperature < min) {
                 min = temperature;
             }
+
+            sum += temperature;
+            count++;
         }
+
+        double average = sum / count;
 
         // looked at the link below to remember how to round outputs
         // https://www.geeksforgeeks.org/java/java-program-to-round-a-number-to-n-decimal-places/
         System.out.println("Max: " + String.format("%.2f", max));
         System.out.println("Min: " + String.format("%.2f", min));
+        System.out.println("Average: " + String.format("%.2f", average));
 
         input.close();
     }
