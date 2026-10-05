@@ -20,24 +20,28 @@ public class WeatherSummary {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        double min = 99999;
-        double max = -99999;
+        double min = 99999; //crazy large temp
+        double max = -99999; //crazy small temp
+        double sum = 0; //all temps
+        int count = 0; //counter
 
         while (scan.hasNextDouble()) {
             double temp = scan.nextDouble();
 
-            if (temp > max) {
+            if (temp > max) { //weather max check
                 max = temp;
             }
 
-            if (temp < min) {
+            if (temp < min) { //weather min check
                 min = temp;
             }
-
+            sum += temp;
+            count++;
             
         }
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
+        System.out.println("Average: " + (sum / count));
 
         scan.close();
         
