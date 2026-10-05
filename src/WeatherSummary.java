@@ -28,7 +28,7 @@ public class WeatherSummary {
                 if(NumberD > Max)
                 {
                     NumberD = Max;
-                }else if(Number < Min)
+                }else if(Number < Min || Min == 0)
                 {
                     NumberD = Min;
                 }
