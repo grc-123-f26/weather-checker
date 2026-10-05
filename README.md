@@ -23,18 +23,18 @@ Once your code works, please add, commit, and push it. Feel free to make smaller
 > Hint: `nextDouble` and `hasNextDouble` will be helpful for this wave!
 
 ## Wave 3: Max and Min
-In this wave, please edit your WeatherFetcher so that it does not print out every temperature. Instead, it should calculate the maximum and mininmum of the temperatures provided from System.in. Have it print out like so:
+In this wave, please edit your WeatherSummary so that it does not print out every temperature. Instead, it should calculate the maximum and mininmum of the temperatures provided from System.in. Have it print out like so:
 ```
-Max: 66.4
-Min: 77.1
+Max: 77.1
+Min: 66.4
 ```
 Your numbers will be different based on the actual weather. Remember to add commit and push!
 
 ## Wave 4:
 Now add functionality to compute and print the average temperature as well:
 ```
-Max: 66.4
-Min: 77.1
+Max: 77.1
+Min: 66.4
 Average: 72.03333333333333
 ```
 
