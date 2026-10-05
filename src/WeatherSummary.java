@@ -18,12 +18,17 @@ public class WeatherSummary {
      */
     public static void main(String[] args) 
     {
+        double Max = 0;
+        double Min = 0;
         Scanner ScannerD = new Scanner(System.in);
         while(ScannerD.hasNextDouble())
             {
                 double NumberD; 
+
                 NumberD = ScannerD.nextDouble();
+
                 System.out.println(NumberD);
+
             }
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
