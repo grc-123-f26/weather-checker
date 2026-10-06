@@ -18,13 +18,23 @@ public class WeatherSummary {
      * @param args command line arguments (ignored)
      */
     public static void main(String[] args) {
-        // Implement this method!
-        // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
         Scanner scan = new Scanner(System.in);
+
+        double data = scan.nextDouble();
+        double max = data;
+        double min = data;
 
         while (scan.hasNextDouble()) {
             double temp = scan.nextDouble();
-            System.out.printf("%.2f%n",temp); // no more than 2 decimals
+            if(temp < min) {
+                min = temp;
+            }
+            if(temp > max) {
+                max = temp;
+            }
         }
+
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
     }
 }
